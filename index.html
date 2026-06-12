@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portfolio of Yousef Alhadha — IT Student & Developer"/>
+  <title>Portfolio – Yousef Alhadha</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="https://unpkg.com/lucide@1/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<script>history.scrollRestoration='manual';window.scrollTo(0,0)</script>
+
+<div class="page-loader" id="page-loader"><div class="spinner"></div></div>
+<!-- ════ NAV ════ -->
+<nav class="nav-card">
+  <div class="nav-icons">
+    <button type="button" class="nav-icon active" data-tab="home" onclick="switchTab('home',this)" title="Home" aria-label="Home">
+    <i data-lucide="house" width="18" height="18"></i>    </button>
+    <button type="button" class="nav-icon" data-tab="about" onclick="switchTab('about',this)" title="About" aria-label="About">
+      <i data-lucide="user" width="18" height="18"></i>
+    </button>
+    <button type="button" class="nav-icon" data-tab="projects" onclick="switchTab('projects',this)" title="Projects" aria-label="Projects">
+      <i data-lucide="briefcase" width="18" height="18"></i>
+    </button>
+    <button type="button" class="nav-icon" data-tab="now" onclick="switchTab('now',this)" title="Now" aria-label="Now">
+      <i data-lucide="clock" width="18" height="18"></i>
+    </button>
+  </div>
+  <div class="nav-right">
+    <button type="button" class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+      <i id="theme-icon" data-lucide="sun" width="18" height="18"></i>
+    </button>
+<a href="mailto:yalhadha@icloud.com" class="hire-nav" aria-label="Send email">
+       <i data-lucide="circle-plus" width="14" height="14"></i><span class="hire-text">Hire Me</span>
+     </a>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════
+     TAB 1 — HOME
+════════════════════════════════ -->
+<div class="tab-content active" id="tab-home">
+
+  <!-- Hero -->
+  <div class="card">
+    <div class="hero-pad">
+      <div class="hero-top">
+        <div class="sec-label"><span class="dot"></span>IT Student</div>
+        <span class="avail-pill"><span class="avail-dot"></span>Available for work</span>
+      </div>
+      <div class="hero-body">
+        <div class="hero-text">
+          <h1>Hi I'm Yousef</h1>
+          <p>IT student living in Germany.<br>Passionate about building software and solving real-world problems.</p>
+          <div class="hero-btns">
+            <a href="mailto:yalhadha@icloud.com" class="btn btn-d">
+             <i data-lucide="circle-plus" width="18" height="18"></i>
+              Hire Me
+            </a>
+            <button type="button" class="btn btn-g" onclick="copyEmail(this)">
+              <i data-lucide="copy" width="18" height="18"></i>
+              Copy Email<span class="tip">Copied!</span>
+            </button>
+          </div>
+        </div>
+        <!-- Profile Photo -->
+         <div class="avatar-ring">
+          <img src="assets/profile-photo.jpg" class="fill-img" alt="Yousef Alhadha profile photo" />
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Currently working -->
+  <div class="card no-lift" onclick="switchTab('now', document.querySelector('[data-tab=now]'))" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')switchTab('now', document.querySelector('[data-tab=now]'))">
+    <div class="currently-card">
+      <div class="currently-top">
+        <div class="currently-eyebrow"><span class="currently-pulse"></span>Now</div>
+        <span class="currently-link">See more ›</span>
+      </div>
+  <div class="currently-items" id="home-now-items"></div>
+    </div>
+  </div>
+
+  <!-- What I do -->
+  <div class="card">
+    <div class="card-head">
+      <div class="sec-label"><span class="dot"></span>What I do</div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sub)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+       </svg>
+      </div>
+      <div class="svc-body">
+        <div class="svc-name">Web Development</div>
+        <div class="svc-desc">Building responsive websites and web apps from scratch — clean code, fast load times, great UI/UX.</div>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sub)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="8" rx="2"/>
+          <rect x="2" y="14" width="20" height="8" rx="2"/>
+          <line x1="6" y1="6" x2="6.01" y2="6"/>
+          <line x1="6" y1="18" x2="6.01" y2="18"/>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <div class="svc-name">Backend &amp; APIs</div>
+        <div class="svc-desc">Designing and building server-side logic, REST APIs, and authentication systems that power apps.</div>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sub)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2"/>
+          <line x1="12" y1="18" x2="12.01" y2="18"/>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <div class="svc-name">Mobile Development</div>
+        <div class="svc-desc">Creating cross-platform mobile apps with Flutter — smooth, native-feeling experiences on iOS and Android.</div>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sub)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+           <ellipse cx="12" cy="5" rx="9" ry="3"/>
+           <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+           <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <div class="svc-name">Database Design</div>
+        <div class="svc-desc">Designing efficient and scalable database schemas for modern applications.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects preview -->
+  <div class="card">
+    <div class="card-head">
+      <div class="sec-label"><span class="dot"></span>Projects</div>
+      <button type="button" class="view-all" onclick="switchTab('projects', document.querySelector('[data-tab=projects]'))">View All →</button>
+    </div>
+    <div class="rows" id="home-projects"></div>
+  </div>
+
+<!-- Skills marquee -->
+  <div class="card">
+    <div class="skills-card">
+      <div class="sec-label"><span class="dot"></span>Skills &amp; Tools</div>
+      <div class="marquee-wrap">
+        <div class="marquee-track">
+
+          <!-- Set 1 -->
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span class="skill-name">HTML</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span class="skill-name">CSS</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span class="skill-name">JS</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span class="skill-name">Python</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><span class="skill-name">Figma</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span class="skill-name">MySQL</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"><span class="skill-name">VSCode</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><span class="skill-name">Flutter</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"><span class="skill-name">Firebase</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span class="skill-name">Java</span></div>
+
+          <!-- Set 2 — duplicate for seamless loop -->
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span class="skill-name">HTML</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span class="skill-name">CSS</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span class="skill-name">JS</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span class="skill-name">Python</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><span class="skill-name">Figma</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span class="skill-name">MySQL</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"><span class="skill-name">VSCode</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><span class="skill-name">Flutter</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"><span class="skill-name">Firebase</span></div>
+          <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span class="skill-name">Java</span></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Follow -->
+  <div class="card">
+    <div class="follow-pad">
+      <div class="follow-lbl">Links</div>
+      <ul class="socials">
+        <li><a href="https://github.com/yousefalhadha" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer" data-footer="home"></div>
+</div>
+
+
+<!-- ════════════════════════════════
+     TAB 2 — ABOUT
+════════════════════════════════ -->
+<div class="tab-content" id="tab-about">
+
+  <div class="card">
+    <div class="about-hero">
+      <!-- ↓ Profile Photo -->
+       <div class="about-avatar">
+        <img src="assets/profile-photo.jpg" class="fill-img" alt="Yousef Alhadha profile photo" />
+       </div>
+      <div class="about-name">Yousef Alhadha</div>
+      <div class="about-role">IT Student</div>
+      <p class="about-bio">I'm an IT student with <span>3+ years</span> of experience in software development and design. I believe in creating solutions that are both functional and user-friendly.<br><br>When I'm not coding, you'll find me exploring new technologies, learning new concepts in computer science, or maybe just enjoying some video games.</p>
+    </div>
+    <div style="border-top:1px solid var(--border);margin:0 20px"></div>
+    <div class="skills-pad" style="padding-top:16px">
+      <div class="skills-title">Disciplines</div>
+      <div class="tags">
+        <span class="tag">Full-Stack Development</span><span class="tag">Agile/Scrum</span><span class="tag">Networking</span>
+        <span class="tag">Database Management</span><span class="tag">Cybersecurity</span><span class="tag">Cloud Computing</span>
+        <span class="tag">Design Systems</span><span class="tag">UI / UX</span>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--border);margin:0 20px"></div>
+    <div class="skills-pad" style="padding-top:16px">
+      <div class="skills-title">Tools</div>
+      <div class="tags">
+        <span class="tag">▤ VsCode</span><span class="tag">◻ Linux</span>
+        <span class="tag">▣ Git</span><span class="tag">✦ Figma</span>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--border);margin:0 20px"></div>
+    <div class="skill-bars" style="padding-top:16px">
+      <div class="skills-title">Proficiency</div>
+      <div class="skill-bar-row"><span class="skill-bar-label">Frontend</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div></div>
+      <div class="skill-bar-row"><span class="skill-bar-label">Backend</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div></div>
+      <div class="skill-bar-row"><span class="skill-bar-label">Mobile</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div></div>
+      <div class="skill-bar-row"><span class="skill-bar-label">Databases</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div></div>
+      <div class="skill-bar-row"><span class="skill-bar-label">Design</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div></div>
+    </div>
+  </div>
+
+<div class="card">
+  <div class="card-head">
+    <div class="sec-label"><span class="dot"></span>Interests</div>
+  </div>
+  <div class="mood-pad">
+    <div class="mood-row">
+      <span class="mood-chip">💻 Open Source</span>
+      <span class="mood-chip">🎮 Gaming</span>
+      <span class="mood-chip">🎵 Music</span>
+      <span class="mood-chip">🌍 Traveling</span>
+      <span class="mood-chip">☕ Coffee</span>
+      <span class="mood-chip">📚 Tech Blogs</span>
+    </div>
+  </div>
+</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="sec-label"><span class="dot"></span>Contact</div>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <div class="form-group">
+        <input type="text" name="name" class="form-input" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" class="form-input" placeholder="Your email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" class="form-textarea" placeholder="What's on your mind?" rows="4" required></textarea>
+      </div>
+      <div class="form-foot">
+        <button type="submit" class="btn btn-d">
+          <i data-lucide="send" width="16" height="16"></i>Send Message
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="footer" data-footer="about"></div>
+</div>
+
+
+<!-- ════════════════════════════════
+     TAB 3 — PROJECTS
+════════════════════════════════ -->
+<div class="tab-content" id="tab-projects">
+  <div class="card">
+    <div class="card-head"><div class="sec-label"><span class="dot"></span>Projects</div><span style="font-size:12px;color:var(--dim)" id="proj-count">5 works</span></div>
+    <div class="filter-row">
+      <button type="button" class="filter-chip active" data-filter="all">All</button>
+      <button type="button" class="filter-chip" data-filter="2026">2026</button>
+      <button type="button" class="filter-chip" data-filter="2025">2025</button>
+      <button type="button" class="filter-chip" data-filter="2023">2023</button>
+      <button type="button" class="filter-chip" data-filter="2022">2022</button>
+    </div>
+    <div class="rows" id="tab-projects-list"></div>
+  </div>
+  <div class="footer" data-footer="projects"></div>
+
+<script>
+  const projectsData = {
+     sudoko: {
+      icon: '🧩',
+      iconClass: 'ico-z',
+      title: 'Sudoku Solver',
+      year: '2026',
+      desc: 'A Sudoku solver built with Python that can solve any valid Sudoku.',
+      descLong: 'A Python-based Sudoku solver that implements a backtracking algorithm to find solutions for any valid Sudoku puzzle. The project includes a user-friendly interface where users can input their own puzzles, see the solving process in real-time with visual highlights, and explore different solution paths. The design focuses on clarity and educational value, making it a great tool for learning how backtracking works.',
+      tags: ['Educational', 'Algorithm', 'Backtracking'],
+      screenshot: 'assets/projects/sudoku.jpg',
+      url: 'https://github.com/yousefalhadha/sudoku-solver',
+      urlLabel: 'View on GitHub',
+    },
+    pen: {
+      icon: '🖊',
+      iconClass: 'ico-z',
+      title: 'The Pen™',
+      year: '2025',
+      desc: 'A site that makes a perfectly normal pen look premium.',
+      descLong: 'A gimmick website inspired by the classic "sell me this pen" from the movie Wolf of Wall Street. It’s a single-page site that showcases an ordinary pen trying to sell itself. The project is a fun exercise in visual design, typography, and persuasive writing, all wrapped up in a sleek MacOS-style interface.',
+      tags: ['Landing Page', 'Visual Design', 'MacOS Style'],
+      screenshot: 'assets/projects/pen.jpg',
+      url: 'https://yousefalhadha.github.io/The-Pen/',
+      urlLabel: 'Live Preview',
+    },
+    calculator: {
+      icon: '🧮',
+      iconClass: 'ico-z',
+      title: 'Calculator App',
+      year: '2023',
+      desc: 'JavaScript-based calculator for basic arithmetic operations.',
+      descLong: 'A clean calculator built with vanilla JavaScript that handles addition, subtraction, multiplication, and division. Features include keyboard input, decimal support, chained operations, and a polished interface with hover/active states.',
+      tags: ['Math Operations', 'Keyboard Input', 'UI Components'],
+      screenshot: 'assets/projects/calculator.jpg',
+      url: 'https://yousefalhadha.github.io/calculator/',
+      urlLabel: 'Try it Live',
+    },
+    weather: {
+      icon: '🌤',
+      iconClass: 'ico-z',
+      title: 'Weather App',
+      year: '2023',
+      desc: 'Real-time weather app using a public API with city search and live conditions.',
+      descLong: 'A real-time weather dashboard that fetches live data from a public weather API. Users can search any city to view current temperature and conditions.',
+      tags: ['API Integration', 'Live Data', 'UX Design'],
+      screenshot: 'assets/projects/weather.jpg',
+      url: 'https://yousefalhadha.github.io/weather-app/',
+      urlLabel: 'Live Preview',
+    },
+    quiz: {
+      icon: '🤔',
+      iconClass: 'ico-z',
+      title: 'Quiz Game',
+      year: '2022',
+      desc: 'Interactive quiz game with multiple-choice questions and instant feedback',
+      descLong: 'An engaging quiz game featuring multiple-choice questions across several categories. Players receive instant visual feedback on correct/incorrect answers, track their running score, and see a results summary at the end.',
+      tags: ['Game Logic', 'Score Tracking', 'Interactive UI'],
+      screenshot: 'assets/projects/quiz.jpg',
+      url: 'https://yousefalhadha.github.io/quiz-game/',
+      urlLabel: 'Play Game',
+    },
+    todo: {
+      icon: '📋',
+      iconClass: 'ico-z',
+      title: 'Todo App',
+      year: '2022',
+      desc: 'Task management app to add, edit, and delete daily tasks.',
+      descLong: 'A task management app built with vanilla JavaScript and localStorage persistence. Users can add, edit, mark complete, and delete tasks with the data surviving page refreshes. The clean interface prioritizes focus and productivity, with filters for active/completed tasks and drag-to-reorder support.',
+      tags: ['LocalStorage', 'CRUD', 'Task Management'],
+      screenshot: 'assets/projects/todo.jpg',
+      url: 'https://yousefalhadha.github.io/todo-list/',
+      urlLabel: 'Try it Live',
+    },
+    Surprise: {
+      icon: '🎁',
+      iconClass: 'ico-z',
+      title: 'Surprise',
+      year: '2022',
+      desc: 'And last but not least...',
+      descLong: 'You just got...',
+      tags: ['Javascript', 'ASCII', 'Jk'],
+      url: 'https://www.youjustgot.com/',
+      urlLabel: 'Try it Live',
+    },
+  };
+
+  function renderProjects() {
+    const entries = Object.entries(projectsData);
+    const homeList = document.getElementById('home-projects');
+    const projectsList = document.getElementById('tab-projects-list');
+    const countEl = document.getElementById('proj-count');
+
+    if (homeList) {
+      const top3 = entries.slice(0, 3);
+      homeList.innerHTML = top3
+        .map(function([id, p]) {
+          return '<a class="row" href="#" data-project="' + id + '">'
+            + '<div class="ico ' + p.iconClass + '">' + p.icon + '</div>'
+            + '<div class="row-info">'
+            + '<div class="row-name">' + p.title + '</div>'
+            + '<div class="row-sub">' + p.tags.slice(0, 2).join(', ') + '</div>'
+            + '</div>'
+            + '<span class="chev">›</span>'
+            + '</a>';
+        })
+        .join('');
+    }
+
+    if (projectsList) {
+      projectsList.innerHTML = entries
+        .map(function([id, p]) {
+          return '<a class="proj-card" href="#" data-project="' + id + '" data-year="' + p.year + '">'
+            + '<div class="proj-card-top">'
+            + '<div class="proj-card-icon ' + p.iconClass + '">' + p.icon + '</div>'
+            + '<span class="proj-card-year">' + p.year + '</span>'
+            + '</div>'
+            + '<div class="proj-card-name">' + p.title + '</div>'
+            + '<div class="proj-card-desc">' + p.desc + '</div>'
+            + '<div class="proj-card-tags">'
+            + p.tags.map(function(t) { return '<span class="proj-tag">' + t + '</span>'; }).join('')
+            + '</div>'
+            + '<div class="proj-arrow-row"><span>View project →</span></div>'
+            + '</a>';
+        })
+        .join('');
+    }
+
+    if (countEl) {
+      var n = entries.length;
+      countEl.textContent = n + ' work' + (n !== 1 ? 's' : '');
+    }
+  }
+
+</script>
+</div>
+
+
+<!-- ════════════════════════════════
+     TAB 4 — NOW
+════════════════════════════════ -->
+<div class="tab-content" id="tab-now">
+
+  <div class="card">
+    <div class="now-header">
+      <div class="now-eyebrow"><span class="live-dot"></span>Live update</div>
+      <h2>What I'm doing now</h2>
+      <p>A snapshot of what's occupying my brain, hands, and ears at this moment. Updated roughly every few weeks.</p>
+    </div>
+    <div style="border-top:1px solid var(--border);margin:0 20px"></div>
+    <div class="status-pad">
+      <div class="status-row">
+        <div class="status-left">
+          <div class="status-label">Availability</div>
+          <div class="status-val">Open to projects</div>
+          <div class="status-sub">Starting from June 2026</div>
+        </div>
+        <span class="status-open"><span class="avail-dot"></span>Open</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="sec-label"><span class="dot"></span>Currently</div></div>
+    <div id="tab-now-items"></div>
+
+<script>
+  const nowData = [
+    { icon:'🛠️', label:'Working on',    val:'Local Business Website',            meta:'Building a real website for a local shop' },
+    { icon:'📚',  label:'Learning',       val:'Cloud computing',    meta:'Exploring AWS and cloud infrastructure' },
+    { icon:'📖',  label:'Reading',        val:'Atomic Habits',            meta:'James Clear' },
+    { icon:'🎧',  label:'Listening to',   val:'Lofi Girl',      meta:'On repeat while in deep work mode' },
+    { icon:'✈️',  label:'Traveled to last', val:'KL, Malaysia',        meta:'Vacation · August 2025' },
+  ];
+  function renderNow() {
+    var h=document.getElementById('home-now-items'),t=document.getElementById('tab-now-items');
+    if(h)h.innerHTML=nowData.slice(0,3).map(function(x){return'<div class="currently-item"><div class="curr-icon">'+x.icon+'</div><div class="curr-body"><div class="curr-label">'+x.label+'</div><div class="curr-val">'+x.val+'</div><div class="curr-meta">'+x.meta+'</div></div></div>'}).join('');
+    if(t)t.innerHTML=nowData.map(function(x){return'<div class="now-item"><div class="now-icon">'+x.icon+'</div><div class="now-body"><div class="now-label">'+x.label+'</div><div class="now-val">'+x.val+'</div><div class="now-meta">'+x.meta+'</div></div></div>'}).join('');
+  }
+
+  /* ─── Footer ─── */
+  const footerData = {
+    home: '<p>© 2026 Portfolio · made with passion</p>',
+    about: '<p>© 2026 Portfolio · made with passion</p>',
+    projects: '<p>© 2026 Portfolio · made with passion</p>',
+    now: '<p>Last updated · May 2026</p><p>© 2026 Portfolio · made with passion</p>',
+  };
+  function renderFooter() {
+    var els = document.querySelectorAll('[data-footer]');
+    for (var i = 0; i < els.length; i++) {
+      var key = els[i].getAttribute('data-footer');
+      if (footerData[key]) els[i].innerHTML = footerData[key];
+    }
+  }
+</script>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="sec-label"><span class="dot"></span>Current vibe</div></div>
+    <div class="mood-pad">
+      <div class="mood-row">
+        <span class="mood-chip">☕ Slow mornings</span>
+        <span class="mood-chip">🌿 Minimal aesthetics</span>
+        <span class="mood-chip">🎯 Deep focus</span>
+        <span class="mood-chip">📐 Systems thinking</span>
+        <span class="mood-chip">🌙 Late-night sessions</span>
+        <span class="mood-chip">🔍 Pixel precision</span>
+        <span class="mood-chip">🔨 Craft over speed</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="sec-label"><span class="dot"></span>Inspired by lately</div></div>
+    <div class="rows">
+      <a class="row" href="https://fireship.dev/" target="_blank"><div class="ico" style="background:linear-gradient(140deg,#e66b00,#923b00);font-size:20px;color:#000"></div><div class="row-info"><div class="row-name">Fireship</div><div class="row-sub"> Fun, fast-paced videos</div></div><span style="color:var(--dim);font-size:14px">↗</span></a>
+      <a class="row" href="https://www.youtube.com/@mavidesign" target="_blank"><div class="ico" style="background:linear-gradient(140deg,#891bc9,#450868);font-size:20px;color:#000"></div><div class="row-info"><div class="row-name">Mavi Design</div><div class="row-sub">A creative design channel with a focus on modern aesthetics.</div></div><span style="color:var(--dim);font-size:14px">↗</span></a>
+      <a class="row" href="https://retrogamecorps.com/" target="_blank"><div class="ico" style="background:linear-gradient(140deg,#049cde,#075679);font-size:20px;color:#000"></div><div class="row-info"><div class="row-name">Retro Game Corps</div><div class="row-sub">A community for retro gaming enthusiasts.</div></div><span style="color:var(--dim);font-size:14px">↗</span></a>
+    </div>
+  </div>
+
+  <div class="footer" data-footer="now"></div>
+</div>
+
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <img class="modal-img" id="modal-img" alt="">
+    <div class="modal-icon" id="modal-icon"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-year" id="modal-year"></div>
+    <div class="modal-desc" id="modal-desc"></div>
+    <div class="modal-tags" id="modal-tags"></div>
+    <div class="modal-links" id="modal-links"></div>
+  </div>
+</div>
+
+<div class="toast-container" id="toast-container"></div>
+
+<button type="button" class="btt-btn" id="btt-btn" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>renderProjects(); renderNow(); renderFooter()</script>
+<script defer src="script.js"></script>
+</body>
+</html>
